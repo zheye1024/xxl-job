@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.xuxueli</groupId>
 		<artifactId>xxl-job</artifactId>
-		<version>2.2.0-SNAPSHOT</version>
+		<version>3.5.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>xxl-job-core</artifactId>
 	<packaging>jar</packaging>
@@ -15,33 +15,54 @@
 
 	<dependencies>
 
-		<!-- xxl-rpc-core -->
+		<!-- ********************** base ********************** -->
+		<!-- slf4j -->
 		<dependency>
-			<groupId>com.xuxueli</groupId>
-			<artifactId>xxl-rpc-core</artifactId>
-			<version>${xxl-rpc.version}</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 		</dependency>
 
+		<!-- jakarta.annotation-api -->
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- ********************** embed server: netty + gson ********************** -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-codec-http</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<!-- ********************** tool: xxl-tool ********************** -->
+		<dependency>
+			<groupId>com.xuxueli</groupId>
+			<artifactId>xxl-tool</artifactId>
+		</dependency>
+
+		<!-- ********************** plugin: groovy + spring ********************** -->
 		<!-- groovy-all -->
 		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
+			<groupId>org.apache.groovy</groupId>
 			<artifactId>groovy</artifactId>
-			<version>${groovy.version}</version>
 		</dependency>
 
 		<!-- spring-context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${spring.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- junit -->
+		<!-- ********************** test ********************** -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
 			<scope>test</scope>
 		</dependency>
 
